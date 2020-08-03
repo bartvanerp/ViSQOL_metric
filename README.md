@@ -2,6 +2,12 @@
 
 ViSQOL (Virtual Speech Quality Objective Listener) is an objective, full-reference metric for perceived audio quality. It uses a spectro-temporal measure of similarity between a reference and a test speech signal to produce a MOS-LQO (Mean Opinion Score - Listening Quality Objective) score. MOS-LQO scores range from 1 (the worst) to 5 (the best).
 
+## What is new/added with respect to the Google repository?
+This repository is specifically targetted towards using the metric for comparing speech-enhancement algorithms. Two folders and a bash script have been added: audio, results and calculate_metric.sh.
+The files that you wish to evaluate can be put in the corresponding folders in the audio folder. The postfix is used to combine reference and degraded files.
+The bash script saves the results into the results folder with a timestamp of execution.
+Because the algorithms are commonly implemented in the Julia language, direct use of ViSQOL is not suitable because of invalid headers. Therefore the audio files are first processed using ffmpeg and resampled to 16kHz. 
+
 ## Table of Contents
 - [Features](#features)
 - [Build](#build)
