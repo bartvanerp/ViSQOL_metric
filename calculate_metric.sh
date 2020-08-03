@@ -24,8 +24,8 @@ do
 	PATH_original=$DIR_original"/original_$sound.wav"
 	
 	# first upsample files and create correct header
-	ffmpeg -y -i $PATH_file -vn -ar 16000 $PATH_file
-	ffmpeg -y -i $PATH_original -vn -ar 16000 $PATH_original
+	ffmpeg -y -i $PATH_file -vn -ar 16000 -loglevel 24 $PATH_file
+	ffmpeg -y -i $PATH_original -vn -ar 16000 -loglevel 24 $PATH_original
 	
 	# rename results file name to include time of evaluation
 	PATH_results="results/ViSQOL_scores_$dateofeval.csv"
